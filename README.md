@@ -1,8 +1,13 @@
-# Ecommerce for Bitnami Open edX Distribution
+# E-commerce for Bitnami Distribution of Open edX
 
-A collection of configuration files and scripts to make Bitnami' Open edX distribution works with E-Commerce module
+A collection of configuration files and scripts to make Bitnami distribution of Open edX works with the E-Commerce module.
 
 
 ## Author & Maintainer:
 
-Trinh Nguyen <dangtrinhnt@gmail.com> - https://www.dangtrinh.com
+Trinh Nguyen
+
+Founder of EdLab <https://www.edlab.xyz/>
+Email: <dangtrinhnt@gmail.com>
+Blog: https://www.dangtrinh.com
+
