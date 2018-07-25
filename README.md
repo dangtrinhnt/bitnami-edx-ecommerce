@@ -2,7 +2,7 @@
 
 A collection of configuration files and scripts to make Bitnami distribution of Open edX work with the E-Commerce module.
 
-## HOWTOS GUIDE
+## Howtos
 
 https://www.dangtrinh.com/2018/07/how-to-install-e-commerce-module-in.html
 
