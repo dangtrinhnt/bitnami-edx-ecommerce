@@ -1,6 +1,6 @@
 # E-commerce for Bitnami Distribution of Open edX
 
-A collection of configuration files and scripts to make Bitnami distribution of Open edX works with the E-Commerce module.
+A collection of configuration files and scripts to make Bitnami distribution of Open edX work with the E-Commerce module.
 
 
 ## Author & Maintainer:
