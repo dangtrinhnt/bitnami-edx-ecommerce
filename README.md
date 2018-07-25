@@ -7,7 +7,7 @@ A collection of configuration files and scripts to make Bitnami distribution of 
 
 Trinh Nguyen
 
-Founder of EdLab <https://www.edlab.xyz/>
-Email: <dangtrinhnt@gmail.com>
-Blog: https://www.dangtrinh.com
++ Founder of EdLab <https://www.edlab.xyz/>
++ Email: <dangtrinhnt@gmail.com>
++ Blog: https://www.dangtrinh.com
 
