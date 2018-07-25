@@ -1,0 +1,52 @@
+
+upstream ecommerce_app_server {
+    server 127.0.0.1:8130 fail_timeout=0;
+}
+
+server {
+  server_name ~^((stage|prod)-)?ecommerce.*;
+
+  listen 18130 ;
+
+  
+  # Prevent invalid display courseware in IE 10+ with high privacy settings
+  add_header P3P 'CP="Open edX does not have a P3P policy."';
+
+  # Nginx does not support nested condition or or conditions so
+  # there is an unfortunate mix of conditonals here.
+  
+  location ~ ^/static/(?P<file>.*) {
+    root /opt/edx-ficus.3-2/apps/ecommerce/var;
+    try_files /staticfiles/$file =404;
+  }
+
+  location / {
+        try_files $uri @proxy_to_app;
+  }
+
+  # The API should be secured with OAuth 2.0 or or JWT.
+  location /api {
+    try_files $uri @proxy_to_app;
+  }
+
+  # Allow access to this API for POST back from payment processors.
+  location /payment {
+    try_files $uri @proxy_to_app;
+  }
+
+  
+location @proxy_to_app {
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Port $server_port;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    
+    # newrelic-specific header records the time when nginx handles a request.
+    proxy_set_header X-Queue-Start "t=${msec}";
+
+    proxy_set_header Host $http_host;
+
+    proxy_redirect off;
+    proxy_pass http://ecommerce_app_server;
+  }
+
+}

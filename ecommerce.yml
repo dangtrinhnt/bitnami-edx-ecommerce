@@ -1,0 +1,78 @@
+
+AFFILIATE_COOKIE_KEY: dev_affiliate_id
+BROKER_URL: amqp://edx:password@127.0.0.1:5672
+COMMERCE_API_URL: http://my.openedx.com/api/commerce/v1/
+COMPREHENSIVE_THEME_DIRS: null
+COURSE_CATALOG_API_URL: http://my.openedx.com:8008/api/v1/
+#COURSE_CATALOG_API_URL: null
+DATABASES:
+    default:
+        ATOMIC_REQUESTS: true
+        CONN_MAX_AGE: 60
+        ENGINE: django.db.backends.mysql
+        HOST: localhost
+        NAME: ecommerce
+        OPTIONS:
+            read_default_file: /opt/edx-ficus.3-2/mysql/my.cnf
+        PASSWORD: password
+        PORT: 3306
+        USER: ecommerce
+DATABASE_OPTIONS:
+    connect_timeout: 10
+DEFAULT_SITE_THEME: null
+ECOMMERCE_URL_ROOT: http://my.openedx.com:18130
+EDX_API_KEY: <edx api key, the same as it is in lms.auth.json>
+ENABLE_COMPREHENSIVE_THEMING: false
+ENROLLMENT_API_URL: http://my.openedx.com/api/enrollment/v1/enrollment
+JWT_AUTH:
+    JWT_ALGORITHM: HS256
+    JWT_DECODE_HANDLER: ecommerce.extensions.api.handlers.jwt_decode_handler
+    JWT_ISSUERS:
+    - http://my.openedx.com/oauth2
+    - ecommerce_worker
+    JWT_LEEWAY: 1
+    JWT_SECRET_KEY: lms-secret
+    JWT_SECRET_KEYS:
+    - lms-secret
+    JWT_VERIFY_EXPIRATION: true
+LANGUAGE_CODE: en-us
+LMS_DASHBOARD_URL: http://my.openedx.com/dashboard
+LMS_HEARTBEAT_URL: http://my.openedx.com/heartbeat
+LMS_URL_ROOT: http://my.openedx.com
+OAUTH2_PROVIDER_URL: http://my.openedx.com/oauth2
+OSCAR_FROM_EMAIL: oscar@example.com
+PAYMENT_PROCESSOR_CONFIG:
+    edx:
+        cybersource:
+            access_key: SET-ME-PLEASE
+            cancel_page_url: http://my.openedx.com/commerce/checkout/cancel/
+            merchant_id: SET-ME-PLEASE
+            payment_page_url: https://set-me-please
+            profile_id: SET-ME-PLEASE
+            receipt_page_url: http://my.openedx.com/commerce/checkout/receipt/
+            secret_key: SET-ME-PLEASE
+            soap_api_url: https://set-me-please
+            transaction_key: SET-ME-PLEASE
+        paypal:
+            cancel_url: http://my.openedx.com/commerce/checkout/cancel/
+            client_id: 'my paypal client id'
+            client_secret: 'my paypal client secret'
+            error_url: http://my.openedx.com/commerce/checkout/error/
+            mode: sandbox
+            receipt_url: http://my.openedx.com/commerce/checkout/receipt/
+PLATFORM_NAME: My Open edX
+SECRET_KEY: <my secret key>
+SEGMENT_KEY: null
+SOCIAL_AUTH_EDX_OIDC_ID_TOKEN_DECRYPTION_KEY: ecommerce-secret
+SOCIAL_AUTH_EDX_OIDC_KEY: ecommerce-key
+SOCIAL_AUTH_EDX_OIDC_LOGOUT_URL: http://my.openedx.com/logout
+SOCIAL_AUTH_EDX_OIDC_SECRET: ecommerce-secret
+SOCIAL_AUTH_EDX_OIDC_URL_ROOT: http://my.openedx.com/oauth2
+SOCIAL_AUTH_REDIRECT_IS_HTTPS: false
+STATIC_ROOT: /opt/edx-ficus.3-2/apps/ecommerce/var/staticfiles
+THEME_SCSS: sass/themes/default.scss
+TIME_ZONE: Asia/Seoul
+
+
+
+
